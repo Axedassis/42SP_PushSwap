@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/07 18:30:04 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:43:06 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	if (!str)
 		return (-1);
 	nbrs = check_ints(str);
-
+	check_nbrs(nbrs);
+	
 	return (0);
 }

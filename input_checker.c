@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:23:50 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/07 18:31:28 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:54:52 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static int	*init_nbrs(char **splited, int size);
 static void	check_char(char *letter,char **splited);
-static int	*check_ints(char *str);
 
 char	*init_str(int argc, char **argv)
 {
@@ -124,6 +123,7 @@ static int	*init_nbrs(char **splited, int size)
 		free(splited[i]);
 		i++;
 	}
+	pts[i] = '\0';
 	free(splited);
 	return (pts);
 }

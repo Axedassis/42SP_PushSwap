@@ -5,113 +5,125 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 14:58:48 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/07 15:00:38 by lsilva-x         ###   ########.fr       */
+/*   Created: 2025/02/07 18:23:50 by lsilva-x          #+#    #+#             */
+/*   Updated: 2025/02/07 18:31:28 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static void	str_check(char *arg);
-static void	str_many_check(int argc, char **argv);
-static void	check_check(int argc, char **argv);
+static int	*init_nbrs(char **splited, int size);
+static void	check_char(char *letter,char **splited);
+static int	*check_ints(char *str);
 
-
-void	input_check(int argc, char **argv)
+char	*init_str(int argc, char **argv)
 {
-	if (argc == 1)
-		exit (-1);
-	if (argc == 2)
-		str_check(argv[1]);
-	if (argc > 2)
-	{
-		check_check(argc, argv);
-		str_many_check(argc, argv);
-	}
-}
-
-static void	check_check(int argc, char **argv)
-{
+	char	*str;
+	char	*tmp_pnt;
 	int		i;
-	int		c;
-	char	**splited;
 
 	i = 1;
-	c = 0;
+	str = ft_strdup("");
 	while (i < argc)
 	{
-		c = 0;
-		splited = ft_split(argv[i], ' ');
-		if (!splited)
-			exit_program();
-		while(splited[c])
-			c++;
-		if (c != 1)
-			exit_program();
+		tmp_pnt = str;
+		str = ft_strjoin(str, " ");
+		if (!str)
+			return (NULL);
+		free(tmp_pnt);
+		tmp_pnt = str;
+		str = ft_strjoin(str, argv[i]);
+		if (!str)
+			return (NULL);
+		free(tmp_pnt);
 		i++;
 	}
+	return (str);
 }
 
-static void	str_many_check(int argc, char **argv)
-{
-	int		str_len;
-	int		i;
-	int		tmp_i;
-	int		c;
-
-	i = 1;
-	c = 0;
-	str_len = 0;
-	if (argc > 3)
-	{
-		while(i < argc)
-		{
-			str_len = ft_strlen(argv[i]);
-			
-			tmp_i = 0;
-			while (tmp_i < str_len)
-			{
-				if(argv[i][tmp_i] == '+' || argv[i][tmp_i] == '-')
-					if (ft_isdigit(argv[i][tmp_i + 1]) == 0)
-						exit_program();
-				if (ft_isdigit(argv[i][tmp_i]) == 0)
-					exit_program();
-				tmp_i++;
-			}
-			i++;
-		}
-	}
-}
-
-static void	str_check(char *arg)
+int	*check_ints(char *str)
 {
 	char	**splited;
+	int		*pts;
 	int		i;
 	int		c;
-	
+
 	i = 0;
-	splited = ft_split(arg, ' ');
+	splited = ft_split(str,' ');
+	if (!splited)
+	{
+		free (str);
+		exit (-1);
+	}
+	free (str);
 	while (splited[i])
 	{
 		c = 0;
 		while(splited[i][c])
 		{
-			if(splited[i][c] == '+' || splited[i][c] == '-')
-				if (ft_isdigit(splited[i][c + 1]) == 0)
-					exit_program();
-			if(ft_isdigit(splited[i][c]) != 1)
-			{
-				i = 0;
-				while (splited[i])
-				{
-					free(splited[i]);
-					i++;
-				}
-				free(splited);
-				exit_program();
-			}
+			check_char(&splited[i][c], splited);
 			c++;
 		}
 		i++;
 	}
+	pts = init_nbrs(splited, i);
+	if (!pts)
+		exit (-1);
+	return (pts);
+}
+
+static void	check_char(char *letter,char **splited)
+{
+	int		bin;
+	char	*tmp_ptr;
+	int		i;
+
+	i = 0;
+	bin = 0;
+	if (ft_isdigit(*letter) == 0 && bin == 0)
+		bin = -1;
+	if ((*letter == '-' || *letter == '+') && bin == 0)
+		if(ft_isdigit(*(++letter)) == 0)
+			bin = -1;
+	if ((*letter == '-' || *letter == '+') && bin == 0)
+	{
+		tmp_ptr = letter++;
+		if (*tmp_ptr == '-' || *tmp_ptr == '+')
+			bin = -1;
+	}
+	if (*letter == ' ')
+		bin = -1;
+	if (bin == -1)
+	{
+		free_splited(splited);
+		ft_printf("Error\n");
+		exit(-1);
+	}
+}
+
+static int	*init_nbrs(char **splited, int size)
+{
+	int		*pts;
+	int		i;
+
+	i = 0;
+	pts = (int *)malloc(sizeof(int) * (size + 1));
+	if (!pts)
+	{
+		free_splited(splited);
+		exit(-1);
+	}
+	while (splited[i])
+	{
+		pts[i] = ft_atoi(splited[i]);
+		if (!pts[i])
+		{
+			free_splited(splited);
+			return (NULL);
+		}
+		free(splited[i]);
+		i++;
+	}
+	free(splited);
+	return (pts);
 }

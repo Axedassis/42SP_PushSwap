@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 18:49:52 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/07 15:00:18 by lsilva-x         ###   ########.fr       */
+/*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
+/*   Updated: 2025/02/07 18:30:04 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 int	main(int argc, char **argv)
 {
-	input_check(argc, argv);
-	return (0);
-}
+	char	*str;
+	int		*nbrs;
 
-void	exit_program(void)
-{
-	ft_printf("Error\n");
-	exit (-1);
+	if (argc == 1)
+		return (-1);
+	str = init_str(argc, argv);
+	if (!str)
+		return (-1);
+	nbrs = check_ints(str);
+
+	return (0);
 }

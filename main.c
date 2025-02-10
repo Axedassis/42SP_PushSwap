@@ -6,11 +6,13 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/10 14:47:42 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/10 19:01:50 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+
+static void	teste(int	*nbrs);
 
 int	main(int argc, char **argv)
 {
@@ -24,5 +26,25 @@ int	main(int argc, char **argv)
 		return (-1);
 	nbrs = check_ints(str);
 	check_nbrs(nbrs);
+	teste(nbrs);
 	return (0);
+}
+
+
+static void	teste(int	*nbrs)
+{
+	s_node	*stack_a;
+	s_node	*new_node;
+	int		i;
+
+	i = 0;
+	stack_a = init_list();
+	while (nbrs[i])
+	{
+		new_node = create_node(nbrs[i], stack_a);
+		push_list(stack_a, new_node);
+		i++;
+	}
+	print_list(stack_a);
+	free_list(stack_a);
 }

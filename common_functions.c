@@ -6,11 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/07 18:48:23 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:45:11 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "utils.h"
 
 void	free_splited(char **splited)
 {

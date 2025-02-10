@@ -6,14 +6,14 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:23:50 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/07 18:54:52 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:47:26 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "utils.h"
 
-static int	*init_nbrs(char **splited, int size);
-static void	check_char(char *letter,char **splited);
+static int		*init_nbrs(char **splited, int size);
+static void		check_char(char *letter, char **splited);
 
 char	*init_str(int argc, char **argv)
 {
@@ -48,17 +48,14 @@ int	*check_ints(char *str)
 	int		c;
 
 	i = 0;
-	splited = ft_split(str,' ');
-	if (!splited)
-	{
-		free (str);
-		exit (-1);
-	}
+	splited = ft_split(str, ' ');
 	free (str);
+	if (!splited)
+		exit (-1);
 	while (splited[i])
 	{
 		c = 0;
-		while(splited[i][c])
+		while (splited[i][c])
 		{
 			check_char(&splited[i][c], splited);
 			c++;
@@ -71,7 +68,7 @@ int	*check_ints(char *str)
 	return (pts);
 }
 
-static void	check_char(char *letter,char **splited)
+static void	check_char(char *letter, char **splited)
 {
 	int		bin;
 	char	*tmp_ptr;
@@ -82,7 +79,7 @@ static void	check_char(char *letter,char **splited)
 	if (ft_isdigit(*letter) == 0 && bin == 0)
 		bin = -1;
 	if ((*letter == '-' || *letter == '+') && bin == 0)
-		if(ft_isdigit(*(++letter)) == 0)
+		if (ft_isdigit(*(++letter)) == 0)
 			bin = -1;
 	if ((*letter == '-' || *letter == '+') && bin == 0)
 	{

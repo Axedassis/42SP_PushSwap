@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/10 14:44:46 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:13:17 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,40 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "libft/includes/libft.h"
 
-void	free_splited(char **splited);
+typedef struct t_node
+{
+	long			data;
+	int				index;
+	int				push_cost;
+	bool			cheapest;
+	struct t_node	*next;
+	struct t_node	*target;
+	struct t_node	*previous;
+} s_node;
+
 char	*init_str(int argc, char **argv);
+
+//HANDLER | CHECKER
 int		*check_ints(char *str);
 void	check_nbrs(int *nbrs);
+
+//FREE
+void	free_splited(char **splited);
+void	free_list(s_node *lst);
+
+//UTILS
+int		size_list(s_node *lst);
+void	print_list(s_node *lst);
+
+//LIST
+void	init_stack(int	*nbrs, s_node **stack_a);
+s_node	*create_node(int data, s_node *lst);
+void	push_list(s_node **lst, s_node *new_node);
+
+//VERIFY
+int		list_sorted(s_node *stack_a);
 
 # endif

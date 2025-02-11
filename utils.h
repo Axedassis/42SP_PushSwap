@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 18:09:38 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:35:06 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	free_list(s_node *lst);
 int		size_list(s_node *lst);
 void	print_list(s_node *lst);
 s_node	*last_node(s_node *stack);
+s_node *node_max(s_node *stack);
 
 //LIST
 void	init_stack(long	*nbrs, s_node **stack_a);

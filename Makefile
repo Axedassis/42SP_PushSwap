@@ -6,7 +6,7 @@
 #    By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 18:35:52 by lsilva-x          #+#    #+#              #
-#    Updated: 2025/02/11 12:09:44 by lsilva-x         ###   ########.fr        #
+#    Updated: 2025/02/11 14:45:58 by lsilva-x         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRC			=	main.c \
 				input_checker.c \
 				struct_functions.c \
 				utils_functions.c \
-				verify_functions.c
+				verify_functions.c \
+				operations.c 
+
 
 OBJ_DIR		= ./build
 OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))

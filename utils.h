@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 12:13:17 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:26:53 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ typedef struct t_node
 char	*init_str(int argc, char **argv);
 
 //HANDLER | CHECKER
-int		*check_ints(char *str);
-void	check_nbrs(int *nbrs);
+long	*check_ints(char *str);
+void	check_nbrs(long *nbrs);
 
 //FREE
 void	free_splited(char **splited);
@@ -43,13 +43,18 @@ void	free_list(s_node *lst);
 //UTILS
 int		size_list(s_node *lst);
 void	print_list(s_node *lst);
+s_node	*last_node(s_node *stack);
 
 //LIST
-void	init_stack(int	*nbrs, s_node **stack_a);
+void	init_stack(long	*nbrs, s_node **stack_a);
 s_node	*create_node(int data, s_node *lst);
 void	push_list(s_node **lst, s_node *new_node);
 
 //VERIFY
 int		list_sorted(s_node *stack_a);
+void	sort_list(s_node **stack_a); //verify if is necessary to sort
+
+//OPERATIONS
+void	sa(s_node **stack_a);
 
 # endif

@@ -6,16 +6,16 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 19:01:23 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/06 19:24:28 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:27:03 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
-	int		result;
-	int		sign;
+	long		result;
+	int			sign;
 
 	result = 0;
 	sign = 1;

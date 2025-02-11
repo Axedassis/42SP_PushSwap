@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 15:26:53 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:09:38 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,15 @@ void	sort_list(s_node **stack_a); //verify if is necessary to sort
 
 //OPERATIONS
 void	sa(s_node **stack_a);
+void	sb(s_node **stack_b);
+void	ss(s_node **stack_a, s_node **stack_b);
+void	rra(s_node **stack_a);
+void	rrb(s_node **stack_b);
+void	rrr(s_node **stack_a, s_node **stack_b);
+void	ra(s_node **stack_a);
+void	rb(s_node **stack_b);
+void	rrr(s_node **stack_a, s_node **stack_b);
+void	pb(s_node **stack_a, s_node **stack_b);
+
 
 # endif

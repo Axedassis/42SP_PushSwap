@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 15:07:48 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:10:33 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	main(int argc, char **argv)
 	check_nbrs(nbrs);
 	init_stack(nbrs, &stack_a);
 	sort_list(&stack_a);
-	print_list(stack_a);
 	free_list(stack_a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/10 19:01:50 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 11:21:59 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,14 @@ static void	teste(int	*nbrs)
 	int		i;
 
 	i = 0;
-	stack_a = init_list();
+	stack_a = NULL;
 	while (nbrs[i])
 	{
 		new_node = create_node(nbrs[i], stack_a);
-		push_list(stack_a, new_node);
+		push_list(&stack_a, new_node);
 		i++;
 	}
 	print_list(stack_a);
 	free_list(stack_a);
+	free (nbrs);
 }

@@ -6,7 +6,7 @@
 #    By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 18:35:52 by lsilva-x          #+#    #+#              #
-#    Updated: 2025/02/10 18:46:00 by lsilva-x         ###   ########.fr        #
+#    Updated: 2025/02/11 10:51:21 by lsilva-x         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC			=	main.c \
 				common_functions.c \
 				input_checker.c \
 				struct_functions.c \
+				utils_functions.c \
 
 OBJ			= $(SRC:.c=.o)
 

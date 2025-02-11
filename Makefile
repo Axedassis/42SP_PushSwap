@@ -6,7 +6,7 @@
 #    By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 18:35:52 by lsilva-x          #+#    #+#              #
-#    Updated: 2025/02/11 10:51:21 by lsilva-x         ###   ########.fr        #
+#    Updated: 2025/02/11 12:09:44 by lsilva-x         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,19 @@ SRC			=	main.c \
 				input_checker.c \
 				struct_functions.c \
 				utils_functions.c \
+				verify_functions.c
 
-OBJ			= $(SRC:.c=.o)
+OBJ_DIR		= ./build
+OBJ			= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT_LIB)
 	$(CC) $(CFLAG) -o $(NAME) $(OBJ) $(LIBFT_LIB)
+
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAG) -c $< -o $@
 
 $(LIBFT_LIB):
 	make -C $(LIBFT_DIR)

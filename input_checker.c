@@ -6,13 +6,13 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:23:50 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/10 14:47:26 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:18:09 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static int		*init_nbrs(char **splited, int size);
+static long		*init_nbrs(char **splited, int size);
 static void		check_char(char *letter, char **splited);
 
 char	*init_str(int argc, char **argv)
@@ -40,10 +40,10 @@ char	*init_str(int argc, char **argv)
 	return (str);
 }
 
-int	*check_ints(char *str)
+long	*check_ints(char *str)
 {
 	char	**splited;
-	int		*pts;
+	long	*pts;
 	int		i;
 	int		c;
 
@@ -97,13 +97,13 @@ static void	check_char(char *letter, char **splited)
 	}
 }
 
-static int	*init_nbrs(char **splited, int size)
+static long	*init_nbrs(char **splited, int size)
 {
-	int		*pts;
-	int		i;
+	long		*pts;
+	long		i;
 
 	i = 0;
-	pts = (int *)malloc(sizeof(int) * (size + 1));
+	pts = (long *)malloc(sizeof(long) * (size + 1));
 	if (!pts)
 	{
 		free_splited(splited);

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:02:38 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 12:09:11 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:20:22 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,21 @@ int		list_sorted(s_node *stack_a)
 		x = x->next;
 	}
 	return (1);
+}
+
+void	sort_list(s_node **stack_a)
+{
+	//s_node	*stack_b;
+
+	if (!list_sorted(*stack_a))
+	{
+		if (size_list(*stack_a) == 2)
+			sa(stack_a);
+		else if (size_list(*stack_a) == 3)
+			sort_three(stack_a);
+		else
+		{
+			//NORMAL SORT
+		}
+	}
 }

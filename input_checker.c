@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:23:50 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 19:29:05 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:26:33 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*init_str(int argc, char **argv)
 	return (str);
 }
 
-long	*check_ints(char *str)
+long	*check_ints(char *str, int *size)
 {
 	char	**splited;
 	long	*pts;
@@ -55,6 +55,7 @@ long	*check_ints(char *str)
 	while (splited[i])
 	{
 		c = 0;
+		(*size)++;
 		while (splited[i][c])
 		{
 			check_char(&splited[i][c], splited);
@@ -63,7 +64,7 @@ long	*check_ints(char *str)
 		i++;
 	}
 	pts = init_nbrs(splited, i);
-	if (!pts)
+	if (pts == NULL)
 		exit (-1);
 	return (pts);
 }
@@ -112,11 +113,11 @@ static long	*init_nbrs(char **splited, int size)
 	while (splited[i])
 	{
 		pts[i] = ft_atoi(splited[i]);
-		if (!pts[i])
-		{
-			free_splited(splited);
-			return (NULL);
-		}
+		// if (pts[i] == NULL)
+		// {
+		// 	free_splited(splited);
+		// 	return (NULL);
+		// }
 		free(splited[i]);
 		i++;
 	}

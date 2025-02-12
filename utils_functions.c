@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 10:50:39 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 18:39:11 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:20:50 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_list(s_node *lst)
 	s_node		*tmp_lst;
 
 	tmp_lst = lst;
-	while (tmp_lst)
+	while (tmp_lst != NULL)
 	{
 		ft_printf("Data: %d\n", tmp_lst->data);
 		tmp_lst = tmp_lst->next;

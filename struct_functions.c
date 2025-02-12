@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:41:42 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 15:19:27 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:29:34 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ void	push_list(s_node **lst, s_node *new_node)
 	}
 }
 
-void	init_stack(long	*nbrs, s_node **stack_a)
+void	init_stack(long	*nbrs, s_node **stack_a, int *size)
 {
 	s_node	*new_node;
 	int		i;
 
 	i = 0;
-	while (nbrs[i])
+	while (i < *size)
 	{
 		new_node = create_node(nbrs[i], *stack_a);
 		push_list(stack_a, new_node);

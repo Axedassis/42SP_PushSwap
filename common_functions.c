@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 15:17:20 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:27:22 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ void	free_splited(char **splited)
 	free(splited);
 }
 
-void	check_nbrs(long *nbrs)
+void	check_nbrs(long *nbrs, int *size)
 {
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	while (nbrs[i])
+	while (i < *size)
 	{
 		j = i + 1;
-		while (nbrs[j])
+		while (j < *size)
 		{
 			if (nbrs[j] == nbrs[i])
 			{

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 18:35:06 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:29:08 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ typedef struct t_node
 char	*init_str(int argc, char **argv);
 
 //HANDLER | CHECKER
-long	*check_ints(char *str);
-void	check_nbrs(long *nbrs);
+long	*check_ints(char *str, int *size);
+void	check_nbrs(long *nbrs, int *size);
 
 //FREE
 void	free_splited(char **splited);
@@ -47,7 +47,7 @@ s_node	*last_node(s_node *stack);
 s_node *node_max(s_node *stack);
 
 //LIST
-void	init_stack(long	*nbrs, s_node **stack_a);
+void	init_stack(long	*nbrs, s_node **stack_a, int *size);
 s_node	*create_node(int data, s_node *lst);
 void	push_list(s_node **lst, s_node *new_node);
 

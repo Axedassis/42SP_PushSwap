@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:02:38 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 19:56:43 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:46:16 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ void	sort_list(s_node **stack_a)
 		else if (size_list(*stack_a) == 3)
 			sort_three(stack_a, &stack_b);
 		else
-		{
-			//NORMAL SORT
-		}
+			sort_stack(stack_a, stack_b);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/12 16:29:08 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 20:45:36 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 #include <stdbool.h>
 #include "libft/includes/libft.h"
 
@@ -24,6 +25,7 @@ typedef struct t_node
 	long			data;
 	int				index;
 	int				push_cost;
+	bool			median;
 	bool			cheapest;
 	struct t_node	*next;
 	struct t_node	*target;
@@ -44,7 +46,8 @@ void	free_list(s_node *lst);
 int		size_list(s_node *lst);
 void	print_list(s_node *lst);
 s_node	*last_node(s_node *stack);
-s_node *node_max(s_node *stack);
+s_node	*node_max(s_node *stack);
+void	update_index(s_node **stack);
 
 //LIST
 void	init_stack(long	*nbrs, s_node **stack_a, int *size);
@@ -67,5 +70,7 @@ void	rb(s_node **stack_b);
 void	rrr(s_node **stack_a, s_node **stack_b);
 void	pb(s_node **stack_a, s_node **stack_b);
 
+//SORT
+void	sort_stack(s_node **stack_a, s_node **stack_b);
 
 # endif

@@ -6,7 +6,7 @@
 #    By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 18:35:52 by lsilva-x          #+#    #+#              #
-#    Updated: 2025/02/11 14:45:58 by lsilva-x         ###   ########.fr        #
+#    Updated: 2025/02/12 20:44:44 by lsilva-x         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ SRC			=	main.c \
 				struct_functions.c \
 				utils_functions.c \
 				verify_functions.c \
-				operations.c 
+				operations.c \
+				sort_stack.c
+
 
 
 OBJ_DIR		= ./build

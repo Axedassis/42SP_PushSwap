@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:29:33 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/13 17:10:35 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 18:23:46 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,6 @@ void	cost_set(s_node **stack_a)
 		tmp_node = tmp_node->next;
 	}
 }
-
-	/*
-	push cost start being the node index
-	
-	The main idea is to verify whether the target node from stacks A and B is
-	above or below the median line.
-
-	If it is above, it is better to use ra(), which moves the current node to
-	the top of the stack.
-
-	If it is below, it is more efficient to use rra(), which moves the node from 
-	its current position to the top by reversing the stack. This is calculated as
-	the difference between the current node and the first node: len_a(b) - crr.index
-
-	the same for the target stack!
-	*/
 
 void	cost_analysis(s_node **stack_a, s_node **stack_b)
 {
@@ -121,14 +105,11 @@ void move_b(s_node **stack_a, s_node **stack_b)
 	s_node	*cheapet_node;
 
 	cheapet_node = find_cheapest(*stack_a);
-	//verify if both cheapest and target are above or below the median line
-	if (cheapet_node->median && cheapet_node->target->median) // above
+	if (cheapet_node->median && cheapet_node->target->median)
 		rr(stack_a, stack_b);
-	else if (!cheapet_node->median && !cheapet_node->target->median) // below
+	else if (!cheapet_node->median && !cheapet_node->target->median)
 		rrr(stack_a, stack_b);
-	//rise the target value from A to the top stack
 	rise_value_A(stack_a, cheapet_node);
-	//rise the target value from B to the top stack
 	rise_value_B(stack_b, cheapet_node->target);
 	pb(stack_a, stack_b);
 }

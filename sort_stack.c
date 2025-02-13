@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:46:59 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/13 17:05:11 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 20:17:29 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,9 @@ void	sort_stack(s_node **stack_a, s_node **stack_b)
 		pb(stack_a, stack_b);
 	while (size_a > 3 && !list_sorted(*stack_a))
 	{
-		printf("First While\n");
 		reroll_data_a(stack_a, stack_b);
 		move_a(stack_a, stack_b);
 	}
-	
-	printf("Sort Threee A\n");
 	sort_three(stack_a, stack_b);
 	while (*stack_b)
 	{
@@ -49,6 +46,8 @@ static void	reroll_data_b(s_node **stack_a, s_node **stack_b)
 {
 	update_index(stack_a);
 	update_index(stack_b);
+	printf("\n\n\n");
+	print_list_d(*stack_b);
 	update_target_b(stack_a, stack_b);
 }
 
@@ -71,11 +70,13 @@ static void	update_target_b(s_node **stack_a, s_node **stack_b)
 	s_node	*b_tmp;
 	long	bigger_diff;
 
-	bigger_diff = LONG_MIN;
 	b_tmp = *stack_b;
 	a_tmp = *stack_a;
-	while (a_tmp)
+	while (b_tmp)
 	{
+	bigger_diff = LONG_MAX;
+	a_tmp = stack_a;
+		
 		if (a_tmp->data > b_tmp->data && a_tmp->data < bigger_diff)
 		{ 
 			bigger_diff = a_tmp->data;

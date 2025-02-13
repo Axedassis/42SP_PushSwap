@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:41:42 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/12 16:29:34 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:53:41 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ s_node	*create_node(int data, s_node *lst)
 	new_node->next = NULL;
 	new_node->previous = NULL;
 	new_node->target = NULL;
+	new_node->median = false;
 	new_node->cheapest = 0;
 	new_node->push_cost = 0;
 	return (new_node);

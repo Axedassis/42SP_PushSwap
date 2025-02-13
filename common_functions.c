@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/12 16:27:22 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/12 20:20:51 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,29 @@ void	check_nbrs(long *nbrs, int *size)
 			}
 			j++;
 		}
+		i++;
+	}
+}
+
+void update_index(s_node **stack)
+{
+	int		i;
+	int		median_val;
+	s_node	*tmp_stack;
+
+	if (!*stack)
+		return ;
+	median_val = size_list(*stack) / 2;
+	tmp_stack = *stack;
+	i = 0;
+	while (tmp_stack)
+	{
+		tmp_stack->index = i;
+		if (i <= median_val)
+			tmp_stack->median = true;
+		else
+			tmp_stack->median = false;
+		tmp_stack = tmp_stack->next;
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/12 20:45:36 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:00:58 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	print_list(s_node *lst);
 s_node	*last_node(s_node *stack);
 s_node	*node_max(s_node *stack);
 void	update_index(s_node **stack);
+s_node	*find_cheapest(s_node	*stack_n);
 
 //LIST
 void	init_stack(long	*nbrs, s_node **stack_a, int *size);
@@ -58,6 +59,7 @@ void	push_list(s_node **lst, s_node *new_node);
 int		list_sorted(s_node *stack_a);
 void	sort_list(s_node **stack_a); //verify if is necessary to sort
 
+
 //OPERATIONS
 void	sa(s_node **stack_a);
 void	sb(s_node **stack_b);
@@ -67,10 +69,11 @@ void	rrb(s_node **stack_b);
 void	rrr(s_node **stack_a, s_node **stack_b);
 void	ra(s_node **stack_a);
 void	rb(s_node **stack_b);
-void	rrr(s_node **stack_a, s_node **stack_b);
+void	rr(s_node **stack_a, s_node **stack_b);
 void	pb(s_node **stack_a, s_node **stack_b);
 
 //SORT
+void	sort_three(s_node **stack_a, s_node **stack_b);
 void	sort_stack(s_node **stack_a, s_node **stack_b);
 
 # endif

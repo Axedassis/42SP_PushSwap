@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/12 20:20:51 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:45:22 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,23 @@ void update_index(s_node **stack)
 		tmp_stack = tmp_stack->next;
 		i++;
 	}
+}
+
+
+s_node	*find_cheapest(s_node	*stack_n)
+{
+	long	nbr;
+	s_node	*cheapest;
+
+	nbr = LONG_MAX;
+	while (stack_n)
+	{
+		if (stack_n->cheapest < nbr)
+		{
+			nbr = stack_n->cheapest;
+			cheapest = stack_n;
+		}
+		stack_n = stack_n->next;
+	}
+	return (cheapest);
 }

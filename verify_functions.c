@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:02:38 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/12 18:46:16 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:01:51 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sort_list(s_node **stack_a)
 	}
 }
 
-static void	sort_three(s_node **stack_a, s_node **stack_b)
+void	sort_three(s_node **stack_a, s_node **stack_b)
 {
 	s_node	*biggest;
 	

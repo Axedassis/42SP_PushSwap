@@ -6,7 +6,7 @@
 #    By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 18:35:52 by lsilva-x          #+#    #+#              #
-#    Updated: 2025/02/12 20:44:44 by lsilva-x         ###   ########.fr        #
+#    Updated: 2025/02/13 15:53:30 by lsilva-x         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRC			=	main.c \
 				utils_functions.c \
 				verify_functions.c \
 				operations.c \
-				sort_stack.c
+				sort_stack.c \
+				auxiliary_functions.c \
+				debug.c
 
 
 

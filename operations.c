@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:23:27 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 18:25:41 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:52:59 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	pb(s_node **stack_a, s_node **stack_b)
 	if (*stack_a)
 		(*stack_a)->previous = NULL;
 	top_node->next = *stack_b;
+	top_node->previous = NULL;
 	if (*stack_b != NULL)
 		(*stack_b)->previous = top_node;
 	*stack_b = top_node;
@@ -104,6 +105,7 @@ void	rb(s_node **stack_b)
 	(*stack_b)->previous = last_n;
 	*stack_b = next_new_node;
 	(*stack_b)->previous = NULL;
+	last_n->previous = NULL;
 }
 
 void	rr(s_node **stack_a, s_node **stack_b)

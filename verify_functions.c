@@ -6,33 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:02:38 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/13 13:01:51 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 15:46:39 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-
-static void	sort_three(s_node **stack_a, s_node **stack_b);
-
-int		list_sorted(s_node *stack_a)
-{
-	s_node	*x;
-	s_node	*y;
-
-	x = stack_a;
-	while(x)
-	{
-		y = x;
-		while (y)
-		{
-			if (x->data > y->data)
-				return (0);
-			y = y->next;
-		}
-		x = x->next;
-	}
-	return (1);
-}
 
 void	sort_list(s_node **stack_a)
 {
@@ -46,7 +24,7 @@ void	sort_list(s_node **stack_a)
 		else if (size_list(*stack_a) == 3)
 			sort_three(stack_a, &stack_b);
 		else
-			sort_stack(stack_a, stack_b);
+			sort_stack(stack_a, &stack_b);
 	}
 }
 

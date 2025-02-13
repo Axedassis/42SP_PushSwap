@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:46:59 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/13 13:04:45 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:05:11 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,168 +14,92 @@
 
 static void	reroll_data_a(s_node **stack_a, s_node **stack_b);
 static void	reroll_data_b(s_node **stack_a, s_node **stack_b);
-static void	update_target(s_node **stack_a, s_node **stack_b);
-static void	cost_set(s_node **stack_a);
-static void	cost_analysis(s_node **stack_a, s_node **stack_b);
-static void	update_target(s_node **stack_a, s_node **stack_b);
+static void	update_target_a(s_node **stack_a, s_node **stack_b);
+static void	update_target_b(s_node **stack_a, s_node **stack_b);
 
 void	sort_stack(s_node **stack_a, s_node **stack_b)
 {
 	int		size_a;
 
-	size_a = size_list(stack_a);
+	size_a = size_list(*stack_a);
+	printf("size_list A: %d\n", size_a);
 	if (size_a-- > 3 && !list_sorted(*stack_a))
 		pb(stack_a, stack_b);
 	if (size_a-- > 3 && !list_sorted(*stack_a))
 		pb(stack_a, stack_b);
 	while (size_a > 3 && !list_sorted(*stack_a))
 	{
+		printf("First While\n");
 		reroll_data_a(stack_a, stack_b);
 		move_a(stack_a, stack_b);
 	}
+	
+	printf("Sort Threee A\n");
 	sort_three(stack_a, stack_b);
 	while (*stack_b)
 	{
-
+		reroll_data_b(stack_a, stack_b);
+		move_b(stack_a, stack_b);
 	}
 	update_index(stack_a);
+	min_to_top(stack_a);
 }
 
 static void	reroll_data_b(s_node **stack_a, s_node **stack_b)
 {
 	update_index(stack_a);
 	update_index(stack_b);
-	
+	update_target_b(stack_a, stack_b);
 }
 
-static void	rise_value_A(s_node **stack_a, s_node *target)
-{
-	s_node	*tmp_ptr;
-
-	tmp_ptr = *stack_a;
-	while (stack_a != target)
-	{
-		if (target->median)
-			ra(stack_a);
-		if (!target->median)
-			rra(stack_a);
-	}
-}
-
-static void	rise_value_B(s_node **stack_b, s_node *target)
-{
-	s_node	*tmp_ptr;
-
-	tmp_ptr = *stack_b;
-	while (stack_b != target)
-	{
-		if (target->median)
-			rb(stack_b);
-		if (!target->median)
-			rrb(stack_b);
-	}
-}
-
-static void move_a(s_node **stack_a, s_node **stack_b)
-{
-	s_node	*cheapet_node;
-
-	cheapet_node = find_cheapest(stack_a);
-	//verify if both cheapest and target are above or below the median line
-	if (cheapet_node->median && cheapet_node->target->median) // above
-		rr(stack_a, stack_b);
-	else if (!cheapet_node->median && !cheapet_node->target->median) // below
-		rrr(stack_a, stack_b);
-	//rise the target value from A to the top stack
-	rise_value_A(stack_a, cheapet_node);
-	//rise the target value from B to the top stack
-	rise_value_B(stack_b, cheapet_node);
-	pb(stack_a, stack_b);
-}
-
-static void	cost_set(s_node **stack_a)
-{
-	s_node	*tmp_node;
-	s_node	*cheap_node;
-	long	cheapest;
-
-	tmp_node = *stack_a;
-	cheapest = LONG_MAX;
-	while (tmp_node)
-	{
-		if (tmp_node->cheapest < cheap_node)
-		{
-			cheap_node = tmp_node;
-			cheapest = tmp_node->cheapest;
-		}
-		tmp_node = tmp_node->next;
-	}
-}
-
-static void	reroll_data(s_node **stack_a, s_node **stack_b)
+static void	reroll_data_a(s_node **stack_a, s_node **stack_b)
 {
 	//update all the index and set if it above or below the median line
 	update_index(stack_a); 
 	update_index(stack_b);
 	//set the target based on the turkish algorithm
-	update_target(stack_a, stack_b);
+	update_target_a(stack_a, stack_b);
 	//make the cost analysis based in the median line and the index of each node
 	cost_analysis(stack_a, stack_b);
 	//bubble search throughout the cheapest cost value;
 	cost_set(stack_a);
 }
 
-static void	cost_analysis(s_node **stack_a, s_node **stack_b)
-{
-	s_node	*tmp_stack;
-	int		a_size;
-	int		b_size;
-
-	tmp_stack = *stack_a;
-	a_size = size_list(stack_a);
-	b_size = size_list(stack_b);
-
-	/*
-	push cost start being the node index
-	
-	The main idea is to verify whether the target node from stacks A and B is
-	above or below the median line.
-
-	If it is above, it is better to use ra(), which moves the current node to
-	the top of the stack.
-
-	If it is below, it is more efficient to use rra(), which moves the node from 
-	its current position to the top by reversing the stack. This is calculated as
-	the difference between the current node and the first node: len_a(b) - crr.index
-
-	the same for the target stack!
-	*/
-	while (tmp_stack)
-	{
-		tmp_stack->push_cost = tmp_stack->index;
-
-		if (!tmp_stack->median)
-			tmp_stack->push_cost = a_size - tmp_stack->index;
-		if (tmp_stack->target->median)
-			tmp_stack->push_cost += tmp_stack->target->index;
-		else
-			tmp_stack->push_cost += b_size - tmp_stack->target->index;
-
-		tmp_stack = tmp_stack->next;
-	}
-}
-
-static void	update_target(s_node **stack_a, s_node **stack_b)
+static void	update_target_b(s_node **stack_a, s_node **stack_b)
 {
 	s_node	*a_tmp;
 	s_node	*b_tmp;
-	int		smallest_diff;
+	long	bigger_diff;
 
-	smallest_diff = INT_MIN;
+	bigger_diff = LONG_MIN;
+	b_tmp = *stack_b;
+	a_tmp = *stack_a;
+	while (a_tmp)
+	{
+		if (a_tmp->data > b_tmp->data && a_tmp->data < bigger_diff)
+		{ 
+			bigger_diff = a_tmp->data;
+			b_tmp->target = a_tmp;
+		}
+		a_tmp = a_tmp->next;
+	}
+	if (bigger_diff == LONG_MIN)
+		b_tmp->target = node_min(*stack_a);
+	b_tmp = b_tmp->next;
+}
+
+static void	update_target_a(s_node **stack_a, s_node **stack_b)
+{
+	s_node	*a_tmp;
+	s_node	*b_tmp;
+	long	smallest_diff;
+
+	smallest_diff = LONG_MIN;
 	a_tmp = *stack_a;
 	b_tmp = *stack_b;
 	while (a_tmp) 
 	{
+		smallest_diff = LONG_MIN;
 		b_tmp = *stack_b;
 		while(b_tmp)
 		{
@@ -201,7 +125,7 @@ static void	update_target(s_node **stack_a, s_node **stack_b)
 			b_tmp = b_tmp->next;
 		}
 		if (smallest_diff == LONG_MIN)
-			a_tmp->target = node_max(stack_b);
+			a_tmp->target = node_max(*stack_b);
 		a_tmp = a_tmp->next;
 	}
 }

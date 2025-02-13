@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 10:50:39 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/12 20:35:25 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:08:10 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ int	size_list(s_node *lst)
 	s_node	*tmp_lst;
 
 	tmp_lst = lst;
+	if (tmp_lst == NULL)
+		return (0);
 	size = 0;
-	while (tmp_lst)
+	while (tmp_lst != NULL)
 	{
 		tmp_lst = tmp_lst->next;
 		size++;
@@ -66,20 +68,30 @@ s_node *node_max(s_node *stack)
 {
 	s_node	*max_node;
 	s_node	*needle;
-	s_node	*hay_stack;
 
 	needle = stack;
 	max_node = needle;
 	while(needle)
 	{
-		hay_stack = needle;
-		while (hay_stack)
-		{
-			if (hay_stack->data > max_node->data)
-				max_node = hay_stack;
-			hay_stack = hay_stack->next;
-		}
+		if (needle->data > max_node->data)
+			max_node = needle;
 		needle = needle->next;
 	}
 	return (max_node);
+}
+
+s_node *node_min(s_node *stack)
+{
+	s_node	*min_node;
+	s_node	*needle;
+
+	needle = stack;
+	min_node = needle;
+	while(needle)
+	{
+		if (needle->data < min_node->data)
+			min_node = needle;
+		needle = needle->next;
+	}
+	return (min_node);
 }

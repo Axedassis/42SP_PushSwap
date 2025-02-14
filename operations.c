@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:23:27 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/14 14:12:49 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:34:44 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,38 +139,32 @@ void	rrr(s_node **stack_a, s_node **stack_b)
 	ft_printf("rrr\n");
 }
 
+static void	rev_rotate(s_node **stack) 
+{
+	s_node	*last; 
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	last = last_node(*stack);
+	last->previous->next = NULL;
+	last->next = *stack;
+	last->previous = NULL;
+	*stack = last;
+	last->next->previous = last;
+}
+
+
 
 void	rra(s_node **stack_a, int print)
 {
-	s_node	*last_n;
-	s_node	*previous_node;
-	
-	if (!stack_a || size_list(*stack_a) <= 1 || !(*stack_a)->next)
-		return ;
-
-	last_n = last_node(*stack_a);
-	previous_node = last_n->previous;
-	previous_node->next = NULL;
-	last_n->previous = NULL;
-	last_n->next = *stack_a;
-	*stack_a = last_n;
-	(*stack_a)->next->previous = *stack_a;
+	rev_rotate(stack_a);
 	if (print)
 		ft_printf("rra\n");
 }
 
 void	rrb(s_node **stack_b, int print)
 {
-	s_node	*last_n;
-
-	if (!*stack_b || !(*stack_b)->next)
-		return ;
-	last_n = last_node(*stack_b);
-	last_n->previous->next = NULL;
-	last_n->next = *stack_b; 
-	last_n->previous = NULL; 
-	*stack_b = last_n; 
-	last_n->next->previous = last_n;
+	rev_rotate(stack_b);
 	if (print)
 		ft_printf("rrb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:29:33 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/14 16:09:56 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:33:32 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	min_to_top(s_node **stack_n)
 		if(node_min(*stack_n)->median)
 			ra(stack_n, 1);
 		else
-			rra(stack_n, 1);
+			rra(stack_n, 1);	
 	}
 }
 

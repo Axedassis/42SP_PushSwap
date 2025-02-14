@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/13 15:53:01 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 14:32:39 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,17 @@ void	sort_list(s_node **stack_a); //verify if is necessary to sort
 
 
 //OPERATIONS
-void	sa(s_node **stack_a);
-void	sb(s_node **stack_b);
+void	sa(s_node **stack_a, int print);
+void	sb(s_node **stack_b, int print);
 void	ss(s_node **stack_a, s_node **stack_b);
-void	rra(s_node **stack_a);
-void	rrb(s_node **stack_b);
+void	rra(s_node **stack_a, int print);
+void	rrb(s_node **stack_b, int print);
 void	rrr(s_node **stack_a, s_node **stack_b);
-void	ra(s_node **stack_a);
-void	rb(s_node **stack_b);
+void	ra(s_node **stack_a, int print);
+void	rb(s_node **stack_b, int print);
 void	rr(s_node **stack_a, s_node **stack_b);
-void	pb(s_node **stack_a, s_node **stack_b);
-void	pa(s_node **stack_a, s_node **stack_b);
+void	pb(s_node **stack_a, s_node **stack_b, int print);
+void	pa(s_node **stack_a, s_node **stack_b, int print);
 
 //SORT
 void	sort_three(s_node **stack_a, s_node **stack_b);
@@ -85,8 +85,9 @@ void	cost_analysis(s_node **stack_a, s_node **stack_b);
 void	min_to_top(s_node **stack_n);
 void	move_a(s_node **stack_a, s_node **stack_b);
 void	move_b(s_node **stack_a, s_node **stack_b);
-void	rise_value_B(s_node **stack_b, s_node *target);
-void	rise_value_A(s_node **stack_a, s_node *target);
+void	rise_value(s_node **stack_n, s_node *target, char stack_l);
+// void	rise_value_B(s_node **stack_b, s_node *target);
+// void	rise_value_A(s_node **stack_a, s_node *target);
 
 //DEBUG
 void print_list_d(s_node *stack_n);

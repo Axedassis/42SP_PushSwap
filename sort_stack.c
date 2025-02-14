@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:46:59 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/14 14:44:21 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:12:05 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ static void	update_target_b(s_node **stack_a, s_node **stack_b)
 	s_node	*target_node;
 	long	bigger_diff;
 
-	if (!stack_a || !*stack_a || !stack_b || !*stack_b) // Guard against empty stacks
+	if (!stack_a || !*stack_a || !stack_b || !*stack_b)
 		return ;
 
 	b_tmp = *stack_b;
 	while (b_tmp)
 	{
 		bigger_diff = LONG_MAX;
-		target_node = NULL; // Initialize to NULL
+		target_node = NULL;
 		a_tmp = *stack_a;
 		while (a_tmp)
 		{
@@ -85,7 +85,7 @@ static void	update_target_b(s_node **stack_a, s_node **stack_b)
 		if (bigger_diff == LONG_MAX)
 			b_tmp->target = node_min(*stack_a);
 		else
-			b_tmp->target = target_node; // Now safe (target_node initialized)
+			b_tmp->target = target_node;
 		b_tmp = b_tmp->next;
 	}
 }
@@ -100,7 +100,6 @@ static void	update_target_a(s_node **stack_a, s_node **stack_b)
 	target_node = NULL;
 	if (!stack_b || !*stack_b)
 		return ;
-	smallest_diff = LONG_MIN;
 	a_tmp = *stack_a;
 	b_tmp = *stack_b;
 	while (a_tmp) 

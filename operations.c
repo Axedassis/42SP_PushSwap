@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:23:27 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/14 16:35:33 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:36:36 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,8 +152,6 @@ static void	rev_rotate(s_node **stack)
 	*stack = last;
 	last->next->previous = last;
 }
-
-
 
 void	rra(s_node **stack_a, int print)
 {

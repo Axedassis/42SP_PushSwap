@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/14 16:14:24 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:46:26 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	check_nbrs(long *nbrs, int *size)
 		j = i + 1;
 		while (j < *size)
 		{
-			if (nbrs[j] == nbrs[i])
+			if (nbrs[j] == nbrs[i] || nbrs[j] > 2147483647 || nbrs[j] < -2147483647)
 			{
 				i = 0;
 				ft_printf("Error\n");

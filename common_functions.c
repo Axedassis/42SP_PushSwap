@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/13 15:46:19 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:14:24 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,13 @@ void update_index(s_node **stack)
 
 s_node	*find_cheapest(s_node	*stack_n)
 {
-	long	nbr;
 	s_node	*cheapest;
 
-	nbr = LONG_MAX;
+	cheapest = NULL;
 	while (stack_n)
 	{
-		if (stack_n->cheapest < nbr)
-		{
-			nbr = stack_n->cheapest;
+		if (stack_n->cheapest)
 			cheapest = stack_n;
-		}
 		stack_n = stack_n->next;
 	}
 	return (cheapest);

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/13 17:05:52 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:29:38 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	char	*str;
 	int		size;
 	s_node	*stack_a;
-	long		*nbrs;
+	long	*nbrs;
 
 	size = 0;
 	stack_a = NULL;
@@ -30,7 +30,6 @@ int	main(int argc, char **argv)
 	check_nbrs(nbrs, &size);
 	init_stack(nbrs, &stack_a, &size);
 	sort_list(&stack_a);
-	print_list(stack_a);
 	free_list(stack_a);
 	return (0);
 }

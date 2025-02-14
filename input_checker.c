@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:23:50 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/12 16:26:33 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/14 12:06:12 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,7 @@ static void	check_char(char *letter, char **splited)
 {
 	int		bin;
 	char	*tmp_ptr;
-	int		i;
 
-	i = 0;
 	bin = 0;
 	if (ft_isdigit(*letter) == 0 && bin == 0)
 		bin = -1;

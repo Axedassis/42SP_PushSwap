@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:29:03 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:44:21 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	sort_list(t_node **stack_a)
 void	three_sort(t_node **stack_a)
 {
 	t_node	*biggest;
-	
+
 	biggest = get_node_max(*stack_a);
 	if (biggest == *stack_a)
 		ra(stack_a, 1);
@@ -62,4 +62,3 @@ void	three_sort(t_node **stack_a)
 	if ((*stack_a)->data > (*stack_a)->next->data)
 		sa(stack_a, 1);
 }
-

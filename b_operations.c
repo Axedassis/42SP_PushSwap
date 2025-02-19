@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:23:27 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:31:34 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:41:34 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ void	rb(t_node **stack_b, int print);
 void	rrb(t_node **stack_b, int print);
 void	rise_value_b(t_node **stack_b, t_node *target);
 
-
 void	sb(t_node **stack_b, int print)
 {
 	t_node	*next_node;
-	
+
 	if (get_list_size(*stack_b) <= 1 || !stack_b || !(*stack_b)->next)
 		return ;
 	next_node = (*stack_b)->next;
@@ -74,7 +73,7 @@ void	rb(t_node **stack_b, int print)
 
 void	rrb(t_node **stack_b, int print)
 {
-	t_node	*last; 
+	t_node	*last;
 
 	if (!*stack_b || !(*stack_b)->next)
 		return ;

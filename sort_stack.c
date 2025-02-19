@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:46:59 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:35:04 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:52:48 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	uptade_stack_b(t_node **stack_a, t_node **stack_b)
 
 static void	uptade_stack_a(t_node **stack_a, t_node **stack_b)
 {
-	update_stack_index(stack_a); 
+	update_stack_index(stack_a);
 	update_stack_index(stack_b);
 	update_target_a(stack_a, stack_b);
 	analyze_cost(stack_a, stack_b);
@@ -64,8 +64,6 @@ static void	update_target_b(t_node **stack_a, t_node **stack_b)
 	t_node	*target_node;
 	long	bigger_diff;
 
-	if (!stack_a || !*stack_a || !stack_b || !*stack_b)
-		return ;
 	b_tmp = *stack_b;
 	while (b_tmp)
 	{
@@ -74,7 +72,7 @@ static void	update_target_b(t_node **stack_a, t_node **stack_b)
 		while (a_tmp)
 		{
 			if (a_tmp->data > b_tmp->data && a_tmp->data < bigger_diff)
-			{ 
+			{
 				bigger_diff = a_tmp->data;
 				target_node = a_tmp;
 			}
@@ -92,22 +90,18 @@ static void	update_target_a(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*a_tmp;
 	t_node	*b_tmp;
-	t_node *target_node;
+	t_node	*target_node;
 	long	smallest_diff;
 
-	target_node = NULL;
-	if (!stack_b || !*stack_b)
-		return ;
 	a_tmp = *stack_a;
-	b_tmp = *stack_b;
-	while (a_tmp) 
+	while (a_tmp)
 	{
 		smallest_diff = LONG_MIN;
 		b_tmp = *stack_b;
-		while(b_tmp)
+		while (b_tmp)
 		{
 			if (b_tmp->data < a_tmp->data && b_tmp->data > smallest_diff)
-			{ 
+			{
 				smallest_diff = b_tmp->data;
 				target_node = b_tmp;
 			}

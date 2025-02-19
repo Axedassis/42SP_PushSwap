@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:41:42 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:53:30 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:04:15 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,33 @@ void	init_stack(long	*nbrs, t_node **stack_a, int *size)
 	}
 	update_stack_index(&new_node);
 	free(nbrs);
+}
+
+void	sort_list(t_node **stack_a)
+{
+	t_node	*stack_b;
+
+	stack_b = NULL;
+	if (!is_stack_sorted(*stack_a))
+	{
+		if (get_list_size(*stack_a) == 2)
+			sa(stack_a, 1);
+		else if (get_list_size(*stack_a) == 3)
+			three_sort(stack_a);
+		else
+			stack_sort(stack_a, &stack_b);
+	}
+}
+
+void	three_sort(t_node **stack_a)
+{
+	t_node	*biggest;
+
+	biggest = get_node_max(*stack_a);
+	if (biggest == *stack_a)
+		ra(stack_a, 1);
+	else if ((*stack_a)->next == biggest)
+		rra(stack_a, 1);
+	if ((*stack_a)->data > (*stack_a)->next->data)
+		sa(stack_a, 1);
 }

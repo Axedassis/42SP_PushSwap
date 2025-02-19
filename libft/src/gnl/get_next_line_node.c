@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 19:22:18 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/06 19:24:41 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:01:35 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,26 @@ char	*gnl_line(char *buffer)
 	if (buffer[i] && buffer[i] == '\n')
 		line[i++] = '\n';
 	return (line);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int				i;
+	unsigned char	uc;
+
+	i = 0;
+	uc = (unsigned char)c;
+	if (uc < 0 || uc > 127)
+		return ((void *)0);
+	while (s[i] != '\0')
+	{
+		if (s[i] == uc)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (s[i] == uc)
+		return ((char *)&s[i]);
+	return ((void *)0);
 }
 
 char	*gnl_content(int fd, char *buffer)

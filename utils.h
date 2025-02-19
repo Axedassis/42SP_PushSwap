@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:31:39 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:01:24 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	validate_values(long *nbrs, int *size);
 //FREE
 void	free_splited(char **splited);
 void	free_list(t_node *lst);
+void	free_lists(t_node *stack_a, t_node *stack_b);
 
 //UTILS
 int		get_list_size(t_node *lst);
@@ -62,13 +63,13 @@ void	sort_list(t_node **stack_a);
 //OPERATIONS
 void	sa(t_node **stack_a, int print);
 void	sb(t_node **stack_b, int print);
-void	ss(t_node **stack_a, t_node **stack_b);
+void	ss(t_node **stack_a, t_node **stack_b, int cod);
 void	rra(t_node **stack_a, int print);
 void	rrb(t_node **stack_b, int print);
-void	rrr(t_node **stack_a, t_node **stack_b);
+void	rrr(t_node **stack_a, t_node **stack_b, int cod);
 void	ra(t_node **stack_a, int print);
 void	rb(t_node **stack_b, int print);
-void	rr(t_node **stack_a, t_node **stack_b);
+void	rr(t_node **stack_a, t_node **stack_b, int cod);
 void	pb(t_node **stack_a, t_node **stack_b, int print);
 void	pa(t_node **stack_a, t_node **stack_b, int print);
 
@@ -88,5 +89,9 @@ void	rise_value_a(t_node **stack_a, t_node *target);
 //DEBUG
 void	print_linked_list(t_node *lst);
 void	debug_print_list(t_node *stack_n);
+
+//CHECKER
+int		checker_verify(char *str);
+void	exit_safe(char *msg, char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 10:50:39 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:53:55 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:42:59 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	free_list(t_node *lst)
 {
 	t_node		*tmp_node;
 
+	if (!lst)
+		return ;
 	while (lst->next)
 	{
 		tmp_node = lst;

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:06:20 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/11 14:45:34 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:16:49 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, int cod);
 int		ft_printf(const char *str, ...);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_atoi_hexa(char *str);

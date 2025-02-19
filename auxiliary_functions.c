@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:29:33 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:38:19 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:45:29 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ void	move_a(t_node **stack_a, t_node **stack_b)
 	cheapest_node = get_cheapest(*stack_a);
 	if (cheapest_node->median && cheapest_node->target->median)
 		while (*stack_b != cheapest_node->target && *stack_a != cheapest_node)
-			rr(stack_a, stack_b);
+			rr(stack_a, stack_b, 1);
 	else if (!(cheapest_node->median) && !(cheapest_node->target->median))
 		while (*stack_b != cheapest_node->target && *stack_a != cheapest_node)
-			rrr(stack_a, stack_b);
+			rrr(stack_a, stack_b, 1);
 	rise_value_a(stack_a, cheapest_node);
 	rise_value_b(stack_b, cheapest_node->target);
 	pb(stack_a, stack_b, 1);

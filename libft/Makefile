@@ -6,7 +6,7 @@
 #    By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 01:34:42 by lsilva-x          #+#    #+#              #
-#    Updated: 2025/02/04 15:59:28 by lsilva-x         ###   ########.fr        #
+#    Updated: 2025/02/19 16:16:36 by lsilva-x         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC = boolean/ft_bzero.c \
 		conversion/ft_toupper.c \
 		gnl/get_next_line_utils.c \
 		gnl/get_next_line.c \
+		gnl/get_next_line_node.c \
 		memory/ft_calloc.c \
 		memory/ft_memchr.c \
 		memory/ft_memcmp.c \

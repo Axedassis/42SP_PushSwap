@@ -6,14 +6,16 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:23:50 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/14 12:06:12 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:32:24 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static long		*init_nbrs(char **splited, int size);
+char			*init_str(int argc, char **argv);
+long			*check_input(char *str, int *size);
 static void		check_char(char *letter, char **splited);
+static long		*init_nbrs(char **splited, int size);
 
 char	*init_str(int argc, char **argv)
 {
@@ -40,7 +42,7 @@ char	*init_str(int argc, char **argv)
 	return (str);
 }
 
-long	*check_ints(char *str, int *size)
+long	*check_input(char *str, int *size)
 {
 	char	**splited;
 	long	*pts;
@@ -111,11 +113,6 @@ static long	*init_nbrs(char **splited, int size)
 	while (splited[i])
 	{
 		pts[i] = ft_atoi(splited[i]);
-		// if (pts[i] == NULL)
-		// {
-		// 	free_splited(splited);
-		// 	return (NULL);
-		// }
 		free(splited[i]);
 		i++;
 	}

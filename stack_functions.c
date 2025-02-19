@@ -6,17 +6,17 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:41:42 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/13 16:33:17 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:50:44 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-s_node	*create_node(int data, s_node *lst)
+t_node	*create_node(int data, t_node *lst)
 {
-	s_node	*new_node;
+	t_node	*new_node;
 
-	new_node = (s_node *)malloc(sizeof(s_node) * 1);
+	new_node = (t_node *)malloc(sizeof(t_node) * 1);
 	if (!new_node)
 	{
 		free_list(lst);
@@ -33,9 +33,9 @@ s_node	*create_node(int data, s_node *lst)
 	return (new_node);
 }
 
-void	push_list(s_node **lst, s_node *new_node)
+void	push_list(t_node **lst, t_node *new_node)
 {
-	s_node	*tmp_node;
+	t_node	*tmp_node;
 
 	if (*lst == NULL)
 		*lst = new_node;
@@ -49,9 +49,9 @@ void	push_list(s_node **lst, s_node *new_node)
 	}
 }
 
-void	init_stack(long	*nbrs, s_node **stack_a, int *size)
+void	init_stack(long	*nbrs, t_node **stack_a, int *size)
 {
-	s_node	*new_node;
+	t_node	*new_node;
 	int		i;
 
 	i = 0;
@@ -61,6 +61,6 @@ void	init_stack(long	*nbrs, s_node **stack_a, int *size)
 		push_list(stack_a, new_node);
 		i++;
 	}
-	update_index(&new_node);
+	update_stack_index(&new_node);
 	free(nbrs);
 }	

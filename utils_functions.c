@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 10:50:39 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:07:06 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:53:55 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	free_list(t_node *lst)
 {
 	t_node		*tmp_node;
 
-	while(lst->next)
+	while (lst->next)
 	{
 		tmp_node = lst;
 		lst = lst->next;
@@ -52,14 +52,14 @@ t_node	*get_last_node(t_node *stack)
 	return (tmp_node);
 }
 
-t_node *get_node_max(t_node *stack)
+t_node	*get_node_max(t_node *stack)
 {
 	t_node	*max_node;
 	t_node	*needle;
 
 	needle = stack;
 	max_node = needle;
-	while(needle)
+	while (needle)
 	{
 		if (needle->data > max_node->data)
 			max_node = needle;

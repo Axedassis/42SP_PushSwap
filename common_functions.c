@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:08:36 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:42:28 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	validate_values(long *nbrs, int *size)
 	}
 }
 
-void update_stack_index(t_node **stack)
+void	update_stack_index(t_node **stack)
 {
 	int		i;
 	int		median_val;
@@ -83,19 +83,19 @@ t_node	*get_cheapest(t_node	*stack_n)
 	while (stack_n)
 	{
 		if (stack_n->cheapest)
-			return stack_n;
+			return (stack_n);
 		stack_n = stack_n->next;
 	}
-	return NULL;
+	return (NULL);
 }
 
-int		is_stack_sorted(t_node *stack_a)
+int	is_stack_sorted(t_node *stack_a)
 {
 	t_node	*x;
 	t_node	*y;
 
 	x = stack_a;
-	while(x)
+	while (x)
 	{
 		y = x;
 		while (y)

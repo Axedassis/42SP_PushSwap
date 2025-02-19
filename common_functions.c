@@ -6,17 +6,17 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/14 16:14:24 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:08:36 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
 void	free_splited(char **splited);
-void	check_nbrs(long *nbrs, int *size);
-void	update_index(s_node **stack);
-s_node	*find_cheapest(s_node	*stack_n);
-int		list_sorted(s_node *stack_a);
+void	validate_values(long *nbrs, int *size);
+void	update_stack_index(t_node **stack);
+t_node	*get_cheapest(t_node	*stack_n);
+int		is_stack_sorted(t_node *stack_a);
 
 void	free_splited(char **splited)
 {
@@ -31,7 +31,7 @@ void	free_splited(char **splited)
 	free(splited);
 }
 
-void	check_nbrs(long *nbrs, int *size)
+void	validate_values(long *nbrs, int *size)
 {
 	int		i;
 	int		j;
@@ -55,15 +55,15 @@ void	check_nbrs(long *nbrs, int *size)
 	}
 }
 
-void update_index(s_node **stack)
+void update_stack_index(t_node **stack)
 {
 	int		i;
 	int		median_val;
-	s_node	*tmp_stack;
+	t_node	*tmp_stack;
 
 	if (!*stack)
 		return ;
-	median_val = size_list(*stack) / 2;
+	median_val = get_list_size(*stack) / 2;
 	tmp_stack = *stack;
 	i = 0;
 	while (tmp_stack)
@@ -78,24 +78,21 @@ void update_index(s_node **stack)
 	}
 }
 
-s_node	*find_cheapest(s_node	*stack_n)
+t_node	*get_cheapest(t_node	*stack_n)
 {
-	s_node	*cheapest;
-
-	cheapest = NULL;
 	while (stack_n)
 	{
 		if (stack_n->cheapest)
-			cheapest = stack_n;
+			return stack_n;
 		stack_n = stack_n->next;
 	}
-	return (cheapest);
+	return NULL;
 }
 
-int		list_sorted(s_node *stack_a)
+int		is_stack_sorted(t_node *stack_a)
 {
-	s_node	*x;
-	s_node	*y;
+	t_node	*x;
+	t_node	*y;
 
 	x = stack_a;
 	while(x)

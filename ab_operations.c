@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ab_operations.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 18:49:52 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/07 15:00:18 by lsilva-x         ###   ########.fr       */
+/*   Created: 2025/02/19 12:21:04 by lsilva-x          #+#    #+#             */
+/*   Updated: 2025/02/19 12:21:26 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "utils.h"
 
-int	main(int argc, char **argv)
+void	ss(t_node **stack_a, t_node **stack_b)
 {
-	input_check(argc, argv);
-	return (0);
+	sa(stack_a, 0);
+	sb(stack_b, 0);
+	ft_printf("ss\n");
 }
 
-void	exit_program(void)
+void	rr(t_node **stack_a, t_node **stack_b)
 {
-	ft_printf("Error\n");
-	exit (-1);
+	ra(stack_a, 0);
+	rb(stack_b, 0);
+	ft_printf("rr\n");
+}
+
+void	rrr(t_node **stack_a, t_node **stack_b)
+{
+	rra(stack_a, 0);
+	rrb(stack_b, 0);
+	ft_printf("rrr\n");
 }

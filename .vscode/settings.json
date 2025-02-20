@@ -1,16 +1,9 @@
 {
     "files.associations": {
-        "libft.h": "c",
-        "header.h": "c",
-        "utils.h": "c",
-        "stdio.h": "c",
-        "cstdlib": "c",
-        "initializer_list": "c",
         "array": "c",
-        "string": "c",
         "string_view": "c",
+        "initializer_list": "c",
         "ranges": "c",
-        "get_next_line.h": "c",
-        "sstream": "c"
+        "utility": "c"
     }
 }

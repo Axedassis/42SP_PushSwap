@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   common_functions.c                                 :+:      :+:    :+:   */
+/*   common_functions_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/20 16:46:32 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/20 14:52:44 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "utils_bonus.h"
 
 void	free_splited(char **splited);
 void	validate_values(long *nbrs, int *size);
@@ -43,7 +43,7 @@ void	validate_values(long *nbrs, int *size)
 		j = i + 1;
 		while (j < *size)
 		{
-			if (nbrs[j] == nbrs[i] || nbrs[i] > INT_MAX || nbrs[i] < INT_MIN)
+			if (nbrs[j] == nbrs[i])
 			{
 				i = 0;
 				free(nbrs);

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "utils_bonus.h"
 
 static void	applay_move_a(char *str, t_node **stack_a, t_node **stack_b);
 static void	applay_move_b(char *str, t_node **stack_a, t_node **stack_b);

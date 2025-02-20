@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   utils_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/20 14:53:21 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:04:18 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef UTILS_BONUS_H
+# define UTILS_BONUS_H
 
 # include <stdio.h>
 # include <unistd.h>
@@ -89,5 +89,9 @@ void	rise_value_a(t_node **stack_a, t_node *target);
 //DEBUG
 void	print_linked_list(t_node *lst);
 void	debug_print_list(t_node *stack_n);
+
+//CHECKER
+int		checker_verify(char *str);
+void	exit_safe(char *msg, char *str);
 
 #endif

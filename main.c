@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 16:04:18 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/20 14:19:11 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int argc, char **argv)
 	size = 0;
 	stack_a = NULL;
 	if (argc == 1)
+		return (-1);
+	if (ft_strcmp(argv[1], "") == 0)
 		return (-1);
 	str = init_str(argc, argv);
 	if (!str)

@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:11:25 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 20:01:05 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:55:06 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ static void	process_input(t_node **stack_a, t_node **stack_b)
 		str = get_next_line(STDIN_FILENO, 0);
 		if (!str)
 		{
+			if (is_stack_sorted(*stack_a) == 1 && get_list_size(*stack_b) == 0)
+			{
+				exit_safe("OK\n", str);
+				free_list(*stack_a);
+				exit (0);
+			}
 			free_lists(*stack_a, *stack_b);
 			break ;
 		}

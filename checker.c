@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:11:25 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 20:55:06 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:57:35 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static void	applay_move_a(char *str, t_node **stack_a, t_node **stack_b)
 	else if (ft_strcmp(str, "sa") == 0)
 		sa(stack_a, 0);
 	else if (ft_strcmp(str, "sb") == 0)
-		sb(stack_a, 0);
+		sb(stack_b, 0);
 	else if (ft_strcmp(str, "ss") == 0)
 		ss(stack_a, stack_b, 1);
 	applay_move_b(str, stack_a, stack_b);
@@ -85,7 +85,7 @@ static void	applay_move_b(char *str, t_node **stack_a, t_node **stack_b)
 	if (ft_strcmp(str, "rr") == 0)
 		rr(stack_a, stack_b, 0);
 	else if (ft_strcmp(str, "rrb") == 0)
-		rrb(stack_a, 0);
+		rrb(stack_b, 0);
 	else if (ft_strcmp(str, "rra") == 0)
 		rra(stack_a, 0);
 	else if (ft_strcmp(str, "rrr") == 0)

@@ -6,11 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:29:33 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 18:45:29 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:20:15 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 void	set_cost(t_node **stack_a)
 {

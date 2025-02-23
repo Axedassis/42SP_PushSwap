@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:11:25 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/23 13:48:54 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:04:47 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 static void	applay_move_a(char *str, t_node **stack_a, t_node **stack_b);
 static void	applay_move_b(char *str, t_node **stack_a, t_node **stack_b);

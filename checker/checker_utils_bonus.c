@@ -6,11 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:29:46 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/23 13:55:58 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:04:41 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 int	checker_verify(char *str)
 {

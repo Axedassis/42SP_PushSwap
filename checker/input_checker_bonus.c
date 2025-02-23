@@ -6,11 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:23:50 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:32:24 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:20:43 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 char			*init_str(int argc, char **argv);
 long			*check_input(char *str, int *size);

@@ -6,11 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:20:11 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:31:46 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:20:02 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 void	sa(t_node **stack_a, int print);
 void	ra(t_node **stack_a, int print);

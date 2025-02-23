@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/23 13:56:13 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:04:23 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
-# include "libft/includes/libft.h"
+# include "../lib/libft/includes/libft.h"
 
 typedef struct s_node
 {

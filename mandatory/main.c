@@ -6,11 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:32 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/20 14:19:11 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:04:09 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 int	main(int argc, char **argv)
 {

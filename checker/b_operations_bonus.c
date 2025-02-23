@@ -6,11 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:23:27 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:41:34 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:20:23 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 void	sb(t_node **stack_b, int print);
 void	pb(t_node **stack_a, t_node **stack_b, int print);

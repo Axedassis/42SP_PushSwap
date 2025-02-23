@@ -6,11 +6,11 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:41:42 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 16:04:15 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 14:21:05 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 t_node	*create_node(int data, t_node *lst)
 {

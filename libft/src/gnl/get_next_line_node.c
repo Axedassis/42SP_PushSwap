@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 19:22:18 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 20:01:35 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:50:22 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	uc = (unsigned char)c;
-	if (uc < 0 || uc > 127)
+	if (uc <= 0 || uc > 127)
 		return ((void *)0);
 	while (s[i] != '\0')
 	{

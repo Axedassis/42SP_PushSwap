@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:50:28 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 20:01:24 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:56:13 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,9 @@ void	rise_value_a(t_node **stack_a, t_node *target);
 void	print_linked_list(t_node *lst);
 void	debug_print_list(t_node *stack_n);
 
-//CHECKER
-int		checker_verify(char *str);
+//BONUS
 void	exit_safe(char *msg, char *str);
+int		checker_verify(char *str);
+void	free_lists(t_node *stack_a, t_node *stack_b);
 
 #endif

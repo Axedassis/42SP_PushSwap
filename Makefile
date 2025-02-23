@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/07 18:35:52 by lsilva-x          #+#    #+#              #
-#    Updated: 2025/02/20 12:58:35 by lsilva-x         ###   ########.fr        #
+#    Created: 2025/02/23 13:48:09 by lsilva-x          #+#    #+#              #
+#    Updated: 2025/02/23 13:53:55 by lsilva-x         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,10 @@ SRC			=	main.c \
 				ab_operations.c \
 				sort_stack.c \
 				auxiliary_functions.c \
-				debug.c
+				debug.c 
 
 SRC_BONUS	=	checker.c \
-				checker_utils.c
+				checker_utils.c 
 
 BONUS_SRC	= $(filter-out main.c, $(SRC)) $(SRC_BONUS)
 
@@ -67,71 +67,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all bonus clean fclean re
-
-test2:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-100 -n 2))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test3:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-100 -n 3))
-					@./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test5:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-5 -n 5))
-					@./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test25:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-25 -n 25))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					echo -n "Instructions: "
-					./push_swap $(ARG) | wc -l
-
-test50:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-50 -n 50))
-					valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test149:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-149 -n 149))
-					@./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test500:			$(NAME)	
-					$(eval ARG = $(shell seq -500 500 | shuf | head -n 500))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test100:			$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-5000 -n 100))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test150:			$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-150 -n 150))
-					@./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test200:			$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-200 -n 200))
-					@./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test1000:			$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-5000 -n 1000))
-					@./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-.PHONY: all clean fclean re

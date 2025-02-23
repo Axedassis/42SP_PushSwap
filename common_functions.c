@@ -6,7 +6,7 @@
 /*   By: lsilva-x <lsilva-x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:26:16 by lsilva-x          #+#    #+#             */
-/*   Updated: 2025/02/19 12:42:28 by lsilva-x         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:56:42 by lsilva-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,15 @@ void	validate_values(long *nbrs, int *size)
 
 	i = 0;
 	j = 0;
-	while (i < *size)
+	while (i <= *size)
 	{
 		j = i + 1;
-		while (j < *size)
+		while (j <= *size)
 		{
-			if (nbrs[j] == nbrs[i])
+			if (nbrs[j] == nbrs[i] || nbrs[i] > INT_MAX || nbrs[i] < INT_MIN)
 			{
 				i = 0;
+				free(nbrs);
 				ft_printf("Error\n");
 				exit(-1);
 			}
